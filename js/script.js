@@ -1,11 +1,13 @@
-function playGame(playerInput) {
-
+{
+    playGame();
+    function playGame(playerInput) {
+        getMoveName();
     function getMoveName(numberChoice) {
         if (numberChoice == 1) return 'kamień';
         else if (numberChoice == 2) return 'papier';
         else if (numberChoice == 3) return 'nożyce';
     }
-
+    displayResult();
     function displayResult(argComputerMove, argPlayerMove) {
 
     if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
@@ -60,4 +62,4 @@ document.getElementById('play-scissors').addEventListener('click', function () {
     playGame(3);
 });
 
-
+}
