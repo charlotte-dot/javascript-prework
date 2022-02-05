@@ -1,52 +1,55 @@
 {
     playGame();
-    function playGame(playerInput) {
+    const playGame = (playerInput) => {
         getMoveName();
-    function getMoveName(numberChoice) {
-        if (numberChoice == 1) return 'kamień';
-        else if (numberChoice == 2) return 'papier';
-        else if (numberChoice == 3) return 'nożyce';
-    }
-    displayResult();
-    function displayResult(argComputerMove, argPlayerMove) {
+        const getMoveName = function (numberChoice) {
+            if (numberChoice == 1)
+                return 'kamień';
+            else if (numberChoice == 2)
+                return 'papier';
+            else if (numberChoice == 3)
+                return 'nożyce';
+        };
+        displayResult();
+        function displayResult(argComputerMove, argPlayerMove) {
 
-    if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
-        printMessage('Ty wygrywasz!');
-    }
+            if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
+                printMessage('Ty wygrywasz!');
+            }
 
-    if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce') {
-        printMessage('Komputer wygrywa!');
-    }
+            if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce') {
+                printMessage('Komputer wygrywa!');
+            }
 
-    if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
-        printMessage('Ty wygrywasz!');
-    }
+            if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
+                printMessage('Ty wygrywasz!');
+            }
 
-    if (argComputerMove == 'papier' && argPlayerMove == 'kamień') {
-        printMessage('Komputer wygrywa!');
-    }
+            if (argComputerMove == 'papier' && argPlayerMove == 'kamień') {
+                printMessage('Komputer wygrywa!');
+            }
 
-    if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
-        printMessage('Ty wygrywasz!');
-    }
+            if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
+                printMessage('Ty wygrywasz!');
+            }
 
-    if (argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
-        printMessage('Komputer wygrywa!');
-    }
+            if (argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
+                printMessage('Komputer wygrywa!');
+            }
 
-    if (argComputerMove == argPlayerMove) {
-        printMessage('Macie remis!');
-    }
-}
+            if (argComputerMove == argPlayerMove) {
+                printMessage('Macie remis!');
+            }
+        }
 
-    clearMessages();
+        clearMessages();
 
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
-    let computerMove = getMoveName(randomNumber);
-    let playerMove = getMoveName(playerInput);
+        const randomNumber = Math.floor(Math.random() * 3 + 1);
+        const computerMove = getMoveName(randomNumber);
+        const playerMove = getMoveName(playerInput);
 
-    displayResult(computerMove, playerMove);
-}    
+        displayResult(computerMove, playerMove);
+    }    
 document.getElementById('play-rock').addEventListener('click', function () {
     printMessage('Zagrałeś kamień!');
     playGame(1);
